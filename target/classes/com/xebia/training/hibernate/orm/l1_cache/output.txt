@@ -1,0 +1,9 @@
+Important Points about Hibernate First level cache that can be derived from above program are:
+
+1.  First Level cache is enabled by default, there are no configurations needed for this.
+2. Hibernate first level cache is session specific, that’s why when we are getting the same data in same session there is no query fired whereas in other session query is fired to load the data.
+3. Hibernate first level cache can have old values, as you can see above that I have put my program to sleep for 10 seconds and in that time I updated the value (name from Pankaj to PankajK) in database but it didn’t get reflected in the same session. But in other session, we got the updated value.
+4. We can use session evict() method to remove a single object from the hibernate first level cache.
+5. We can use session clear() method to clear the cache i.e delete all the objects from the cache.
+6. We can use session contains() method to check if an object is present in the hibernate cache or not, if the object is found in cache, it returns true or else it returns false.
+7. Since hibernate cache all the objects into session first level cache, while running bulk queries or batch updates it’s necessary to clear the cache at certain intervals to avoid memory issues.
