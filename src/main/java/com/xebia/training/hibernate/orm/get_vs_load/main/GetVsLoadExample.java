@@ -18,7 +18,7 @@ public class GetVsLoadExample {
 	        Transaction tx = session.beginTransaction();
 	         
 	        //Get Example
-	        Employee emp = (Employee) session.get(Employee.class, new Long(2));
+	        Employee emp = (Employee) session.get(Employee.class, new Long(6));
 	        System.out.println("Employee get called");
 	        System.out.println("Employee ID= "+emp.getId());
 	        System.out.println("Employee Get Details:: "+emp+"\n");
